@@ -13,10 +13,16 @@
         android:gravity="center_vertical"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profile_image"
             android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/ic_launcher_foreground" />
+            android:layout_height="45dp"
+            android:src="@mipmap/ic_account_circle"
+            app:civ_border_width="1dp"
+            android:layout_marginStart="10dp"
+            />
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -45,9 +51,27 @@
         <SearchView
             android:layout_width="300dp"
             android:layout_height="40dp"
-            android:background="@drawable/bg_grey_rounded" />
+            android:background="@drawable/bg_grey_rounded"
+            />
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_settings"
+            android:layout_marginStart="10dp"
+            />
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_mas"
+            android:layout_marginStart="10dp"
+            />
     </LinearLayout>
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+    android:translationY="35dp"
+    >
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -138,7 +162,29 @@
                 android:layout_gravity="center"
                 android:layout_weight="1" />
         </TableRow>
+        <Space
+            android:id="@+id/space_4"
+            android:layout_height="10dp" />
+
+        <TableRow>
+
+            <include
+                layout="@layout/custom_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="5dp"
+                android:layout_weight="1" />
+
+            <include
+                layout="@layout/custom_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1" />
+        </TableRow>
     </TableLayout>
+</ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
